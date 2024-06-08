@@ -41,5 +41,9 @@ class GameController < ApplicationController
     render({ :template => "game_templates/play_scissors"})
   end
 
+  def rules
+    render({:template => "game_templates/rules"})
+  end
+
 
 end
