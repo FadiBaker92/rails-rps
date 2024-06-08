@@ -27,5 +27,19 @@ class GameController < ApplicationController
     render({ :template => "game_templates/play_paper" })
   end
 
+  def scissors
+    moves = ["rock", "paper", "scissors"]
+    @comp_move = moves.sample
+
+    if @comp_move == "scissors"
+      @outcome = "tied"
+    elsif @comp_move == "rock"
+      @outcome = "lost"
+    else @comp_move == "paper"
+      @outcome = "won"
+    end
+    render({ :template => "game_templates/play_scissors"})
+  end
+
 
 end
